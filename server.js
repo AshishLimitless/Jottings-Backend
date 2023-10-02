@@ -1,13 +1,24 @@
 import express from "express";
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const bparser = require("body-parser");
+import conDB from "./config/db.js";
+import colors from "colors";
+import dotenv from "dotenv";
+//CONFIGURING .ENV
+dotenv.config();
+
+conDB();
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send({
+    message: "HELLO WORLD",
+  });
+});
+
 //port configuration
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`.bgCyan.white);
+});
 //routes
-
-app.use();
