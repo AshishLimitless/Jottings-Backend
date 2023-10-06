@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Trim } from "./../node_modules/mongoose/types/expressions.d";
+// import { Trim } from "./../node_modules/mongoose/types/expressions.d";
 
 const userSchema = new mongoose.Schema(
   {
@@ -21,4 +21,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.default("users", userSchema);
+export default mongoose.model("users", userSchema);
